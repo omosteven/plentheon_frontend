@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="rgb(0,0,30)">
+    <meta name="viewport" content="width=device-width,block-scale=1,user-scalable=0,minimal-ui">
+    <title>Create Account</title>
+    <!-- <link rel="shortcut icon" href="../assets/images/favicon.ico"> -->
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <!-- <link href="../assets/css/metismenu.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- <link href="../assets/css/icons.css" rel="stylesheet" type="text/css"> -->
+    <link href="../assets/css/style.css" rel="stylesheet" type="text/css">
+    <style>
+        body {
+            color: #FFFFFF
+        }
+        
+        .card {
+            border-radius: 1em;
+            background-color: rgb(0, 0, 40);
+            display: flex;
+            align-content: center;
+        }
+    </style>
+</head>
+
+<body style="background-color: rgb(0,0,40)">
+    <div class="wrapper-page">
+
+        <div class="card overflow-hidden account-card mx-3">
+
+            <div style="background-color: rgb(0, 0, 70);" class="text-rgb(0, 0, 90) text-center position-relative">
+
+                <h5 style="color:white; margin-bottom: -2em;margin-top:1em;font-weight: 500;height:1em;font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;" class="">Create Account</h5>
+
+            </div>
+
+            <div class="account-card-content" style="background-color: rgb(0, 0, 90);">
+
+                <form class="form-horizontal m-t-30">
+                    <div class="form-group"><label for="username">First Name</label>
+                        <input type="text" style="background-color: rgb(0, 0, 40);color:#2F1C52;border-radius:0.5em;height:3em;margin-top:-0.5em;margin-bottom: -0.5em;" class="form-control" id="firstName" placeholder="John">
+                    </div>
+
+                    <div class="form-group"><label for="username">Last Name</label>
+                        <input type="text" style="background-color: rgb(0, 0, 40);color:#2F1C52;border-radius:0.5em;height:3em;margin-top:-0.5em;margin-bottom: -0.5em;" class="form-control" id="lastName" placeholder="Doe">
+                    </div>
+
+                    <div class="form-group"><label for="username">Email</label>
+                        <input type="text" oninput="emailInput()" style="background-color: rgb(0, 0, 40);border-radius:0.5em;height:3em;margin-top:-0.5em;margin-bottom: -0.5em;" class="form-control" id="email" placeholder="johndoe@gmail.com">
+                        <div style="color:red;margin-left:1em;margin-top:0.5em" id="invalidEmail">Invalid Email</div>
+                    </div>
+
+                    <div class="form-group"><label for="userpassword">Password</label>
+                        <input type="password" oninput="passwordInput()" style="background-color: rgb(0, 0, 40);color:#2F1C52;border-radius:0.5em;height:3em;margin-top:-0.5em;margin-bottom: -0.5em;" class="form-control" id="password" placeholder="*********">
+                        <div style="color:red;margin-left:1em;margin-top:0.5em" id="invalidPassword">password length less than eight</div>
+                    </div>
+
+                    <div class="form-group"><label for="userpassword">Confirm Password</label>
+                        <input type="password" oninput="cpasswordInput()" style="background-color: rgb(0, 0, 40);color:#2F1C52;border-radius:0.5em;height:3em;margin-top:-0.5em;margin-bottom: -0.5em;" class="form-control" id="password2" placeholder="********">
+                        <div style="color:red;margin-left:1em;margin-top:0.5em" id="unmatched">passwords not matched</div>
+                    </div>
+                    <style>
+                        .btn {
+                            color: white;
+                            background-color: rgb(0, 0, 40);
+                            height: 3em;
+                            border-radius: 0.5em;
+                            font-weight: 600;
+                            width: 12em
+                        }
+                        
+                        .btn:hover {
+                            color: rgb(0, 0, 70);
+                            background-color: white;
+                            font-weight: 550;
+                        }
+                    </style>
+                    <div class="form-group row m-t-20">
+                        <div class="col-sm-12">
+                        </div>
+                        <div class="col-sm-12 text-center">
+                            <button id="signup" class="btn btn-primary w-md waves-effect waves-light" type="submit">REGISTER</button>
+                            <!-- <div style="margin-top:0.5em;">or sign in with Google</div> -->
+                        </div>
+                    </div>
+                    <div class="form-group m-t-10 mb-0 row" style="text-align: center;margin-top:-1em;margin-bottom: -1em;">
+                        <div class="col-12 m-t-10"><a href="../signin/"><i></i> Already have an account?</a></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <!-- end wrapper-page -->
+    <script>
+        //document.getElementById('verify').style.display = "none";
+
+        var email = document.getElementById('email');
+
+        var password = document.getElementById('password');
+
+        var cpassword = document.getElementById('password2');
+
+        var signup = document.getElementById('signup');
+
+        var invalidPassword = document.getElementById('invalidPassword');
+
+        var unmatched = document.getElementById('unmatched');
+
+        var invalidEmail = document.getElementById('invalidEmail');
+
+
+        invalidPassword.style.display = 'none';
+
+        unmatched.style.display = 'none';
+
+        invalidEmail.style.display = 'none';
+
+        function passwordInput() {
+
+            if (password.value.length < 8) {
+
+                password.style.backgroundColor = 'red';
+
+                signup.disabled = true;
+
+                invalidPassword.style.display = 'block';
+
+            } else {
+
+                password.style.backgroundColor = 'rgb(0, 0, 70)';
+
+                signup.disabled = false;
+
+                invalidPassword.style.display = 'none';
+
+            }
+        }
+
+        function cpasswordInput() {
+
+            if (password.value != cpassword.value) {
+
+                cpassword.style.backgroundColor = 'red';
+
+                signup.disabled = true;
+
+                unmatched.style.display = 'block';
+
+            } else {
+
+                cpassword.style.backgroundColor = 'rgb(0, 0, 70)';
+
+                signup.disabled = false;
+
+                unmatched.style.display = 'none';
+
+            }
+        }
+
+        function isEmailValid(emailAddr) {
+
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailAddr);
+        }
+
+        function emailInput() {
+
+            if (isEmailValid(email.value)) {
+
+                email.style.backgroundColor = 'rgb(0, 0, 70)';
+
+
+                invalidEmail.style.display = 'none';
+
+                signup.disabled = false;
+
+            } else {
+
+                email.style.backgroundColor = 'red';
+
+                invalidEmail.style.display = 'block';
+
+                signup.disabled = true;
+
+            }
+        }
+        document.getElementById('signup').addEventListener("click", function(event) {
+
+            event.preventDefault()
+
+        });
+    </script>
+    <!-- jQuery  -->
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/metisMenu.min.js"></script>
+    <script src="../assets/js/jquery.slimscroll.js"></script>
+    <script src="../assets/js/waves.min.js"></script>
+    <!-- App js -->
+    <script src="../assets/js/app.js"></script>
+</body>
+
+</html>
