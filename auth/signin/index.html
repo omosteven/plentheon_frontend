@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Sign In</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="rgb(0,0,90)">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="../images/icons/favicon.ico" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <!-- <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css"> -->
+    <!--===============================================================================================-->
+
+    <link rel="stylesheet" type="text/css" href="../css/util.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <!--===============================================================================================-->
+    <style>
+        a {
+            text-decoration: none;
+        }
+        
+        @keyframes color-me-in {
+            /* You could think of as "step 1" */
+            0% {
+                background: rgba(0, 0, 90, 0.15);
+            }
+            25% {
+                background: rgba(0, 0, 90, 0.25);
+            }
+            50% {
+                background: rgba(0, 0, 90, 0.45);
+            }
+            75% {
+                background: rgba(0, 0, 90, 0.60);
+            }
+            /* You could think of as "step 2" */
+            100% {
+                background: rgba(0, 0, 90, 0.75);
+            }
+        }
+        
+        @keyframes color-me-out {
+            /* You could think of as "step 1" */
+            0% {
+                background: rgba(0, 0, 90, 0.15);
+            }
+            25% {
+                background: rgba(0, 0, 90, 0.25);
+            }
+            50% {
+                background: rgba(0, 0, 90, 0.45);
+            }
+            75% {
+                background: rgba(0, 0, 90, 0.60);
+            }
+            /* You could think of as "step 2" */
+            100% {
+                background: rgba(0, 0, 90, 0.75);
+            }
+        }
+        
+        @keyframes color-me-in1 {
+            /* You could think of as "step 1" */
+            0% {
+                background: rgba(0, 0, 90, 0.75);
+            }
+            25% {
+                background: rgba(0, 0, 90, 0.60);
+            }
+            50% {
+                background: rgba(0, 0, 90, 0.45);
+            }
+            75% {
+                background: rgba(0, 0, 90, 0.25);
+            }
+            /* You could think of as "step 2" */
+            100% {
+                background: rgba(0, 0, 90, 0.15);
+            }
+        }
+        
+        .login100-form-btn1 {
+            width: 15em;
+            height: 2.5em;
+            border-radius: 0.5em;
+            font-weight: 600;
+            color: rgb(0, 0, 90);
+            box-shadow: 0px 0px 2px white;
+            box-shadow: 1px 2px 5px rgb(0, 0, 90), -5px -5px 1px white;
+        }
+        
+        .login100-form-btn1:hover {
+            color: white;
+            position: relative;
+            animation: color-me-in 2s;
+            background-color: rgb(0, 0, 90);
+        }
+        
+        .login100-form-btn2 {
+            width: 15em;
+            height: 2.5em;
+            border-radius: 0.5em;
+            font-weight: 600;
+            background-color: rgb(0, 0, 90);
+            color: white;
+        }
+        
+        .login100-form-btn2:hover {
+            color: rgb(0, 0, 90);
+            position: relative;
+            animation: color-me-in1 2s;
+            box-shadow: 0px 0px 2px white;
+            background-color: white;
+            box-shadow: 1px 2px 5px rgb(0, 0, 90), -5px -5px 1px white;
+        }
+        
+        .input-class {
+            width: 100%;
+            height: 2em;
+            border-radius: 5px;
+            background-color: white;
+            box-shadow: 1px 0.5px 3px rgb(0, 0, 90), -5px -5px 1px white;
+        }
+        
+        .div-class {
+            margin-top: 1em;
+        }
+        
+        .label-class {
+            color: rgb(0, 0, 90);
+            font-weight: bold;
+            margin-bottom: 0.3em;
+            font-size: 0.8em;
+        }
+        
+        .title {
+            text-align: center;
+            color: rgb(0, 0, 90);
+            font-size: 1.1em;
+            height: 1.5em;
+            margin-bottom: 1em;
+            margin-top: -2em;
+            font-weight: 600;
+        }
+        
+        .div-card {
+            margin-top: -1em;
+            width: 28em;
+            background-color: white;
+        }
+        
+        .container-login100 {
+            animation: color-me-out 2s;
+            background-color: rgb(0, 0, 90)
+        }
+        
+        hr {
+            width: 7.5em;
+            display: inline-block;
+            color: rgb(0, 0, 90);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100 div-card">
+                <form class="login100-form validate-form" action="../dashboard/">
+                    <!-- <span class="login100-form-logo">
+						<i class="zmdi zmdi-landscape"></i>
+					</span> -->
+
+                    <div class="title">
+                        Welcome back!
+                    </div>
+
+                    <div class="div-class" data-validate="Enter firstname">
+                        <div class="label-class">Email</div>
+                        <input class="input-class" type="text" name="firstName" placeholder="First Name">
+
+                    </div>
+                    <div class="div-class" data-validate="Enter an email">
+                        <div class="label-class">Password</div>
+                        <input class="input-class" type="password" name="email" placeholder="Email">
+
+                    </div>
+
+
+                    <div class="container-login100-form-btn" style="margin-top:2em">
+                        <button class="login100-form-btn1" style="width:15em">
+							SIGN IN
+						</button>
+                    </div>
+                    <div class="text-center p-t-10" style="margin-bottom:-1em;">
+                        <a class="txt1" href="../signin-2/">
+							Forgot password?
+						</a>
+                    </div>
+                    <div class="text-center p-t-10" style="font-weight:bold;margin-bottom:0.5em;margin-top: 0.5em;font-size: 1.5em;">
+                        <span class="txt1" style="margin-right: -0.7em;">
+                        <hr/>
+                        </span>
+                        <span class="txt1">
+							OR
+						</span>
+                        <span class="txt1" style="margin-left:-0.7em">
+							<hr/>
+						</span>
+                    </div>
+                    <div class="container-login100-form-btn" style="margin-top:1em">
+                        <button class="login100-form-btn2" style="width:15em">
+							Create Account
+						</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!--===============================================================================================-->
+    <script src="../vendor/jquery/jquery-3.2.1.min.js"></script>
+
+    <!--===============================================================================================-->
+    <script src="../js/main.js"></script>
+
+</body>
+
+</html>
