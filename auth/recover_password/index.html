@@ -1,8 +1,9 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
-    <title>CREATE ACCOUNT</title>
+    <title>RECOVER ACCOUNT</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="rgb(0,0,90)">
@@ -125,50 +126,72 @@
 
     <div class="limiter">
         <div class="container-login100">
-            <div class="wrap-login100 div-card">
+
+            <div id="sendMail" class="wrap-login100 div-card">
                 <form class="login100-form validate-form" action="../dashboard/">
                     <!-- <span class="login100-form-logo">
 						<i class="zmdi zmdi-landscape"></i>
 					</span> -->
 
                     <div class="title">
-                        Create Account
+                        Recover My Account
                     </div>
-                    <div class="div-class" data-validate="Enter firstname">
-                        <div class="label-class">First Name</div>
-                        <input class="input-class" type="text" name="firstName" placeholder="First Name">
 
-                    </div>
-                    <div class="div-class" data-validate="Enter Last Name">
-                        <div class="label-class">Last Name</div>
-                        <input class="input-class" type="text" name="firstName" placeholder="First Name">
+                    <div class="label-class" style="margin-top:1em;margin-bottom:1em">We will send a recovering email to you shortly</div>
 
-                    </div>
+
                     <div class="div-class" data-validate="Enter Email">
                         <div class="label-class">Email</div>
                         <input class="input-class" type="text" name="firstName" placeholder="First Name">
 
                     </div>
-                    <div class="div-class" data-validate="Enter a Password">
-                        <div class="label-class">Password</div>
-                        <input class="input-class" type="password" name="email" placeholder="Email">
+
+                </form>
+                <div class="container-login100-form-btn" style="margin-top:1em">
+                    <button onclick="sendMail()" class="login100-form-btn1" style="width:15em">
+							SEND MAIL
+						</button>
+                </div>
+                <div class="text-center p-t-10" style="margin-bottom:-1em;">
+                    <a class="txt1" href="../signin/">
+							Didn't receive a mail?
+						</a>
+                </div>
+            </div>
+
+            <div id="recover" class="wrap-login100 div-card" style="display: none;">
+                <form class="login100-form validate-form" action="../dashboard/">
+                    <!-- <span class="login100-form-logo">
+						<i class="zmdi zmdi-landscape"></i>
+					</span> -->
+
+                    <div class="title">
+                        Password Reset
+                    </div>
+
+                    <div class="label-class" style="margin-top:1em;margin-bottom:1em">kindly fill in the fields</div>
+
+
+                    <div class="div-class" data-validate="Enter Password">
+                        <div class="label-class">New Password</div>
+                        <input class="input-class" type="password" name="firstName" placeholder="First Name">
 
                     </div>
 
-                    <div class="div-class" data-validate="Enter password">
+                    <div class="div-class" data-validate="Enter Password">
                         <div class="label-class">Confirm Password</div>
-                        <input class="input-class" type="password" name="password" placeholder="Password">
+                        <input class="input-class" type="password" name="firstName" placeholder="First Name">
 
                     </div>
 
                     <div class="container-login100-form-btn" style="margin-top:1em">
                         <button class="login100-form-btn1" style="width:15em">
-							CREATE
+							RECOVER
 						</button>
                     </div>
                     <div class="text-center p-t-10" style="margin-bottom:-1em;">
                         <a class="txt1" href="../signin/">
-							Already have an account?
+							Want to Sign In?
 						</a>
                     </div>
                 </form>
@@ -182,7 +205,12 @@
 
     <!--===============================================================================================-->
     <script src="../js/main.js"></script>
-
+    <script>
+        function sendMail() {
+            document.getElementById("sendMail").style.display = "none";
+            document.getElementById("recover").style.display = "block";
+        }
+    </script>
 </body>
 
 </html>
